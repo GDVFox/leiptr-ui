@@ -71,8 +71,9 @@ export class ComponentEdge {
         this.model.buff = desc['buffer'];
         this.model.priority = desc['priority'];
         this.model.func = desc['condition_function'];
-        this.model.funcParams = desc['function_parameters'].join('$');
-
+        if (desc['function_parameters'] !== undefined) {
+            this.model.funcParams = desc['function_parameters'].join('$');
+        }
         this.draw();
     }
 

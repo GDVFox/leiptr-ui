@@ -188,7 +188,9 @@ export class Component {
         this._componentAsyncText.text = desc['async'].toString();
 
         this.model.func = desc['function'];
-        this.model.funcParams = desc['function_parameters'].join('$')
+        if (desc['function_parameters'] !== undefined) {
+            this.model.funcParams = desc['function_parameters'].join('$');
+        }
     }
 
 
